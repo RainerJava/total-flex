@@ -1,0 +1,9 @@
+Escopos do  maven
+    * compile (default) – caso nenhum escopo seja especificado este será utilizado. São dependências utilizadas em todos os “classpaths” de um projeto.
+    * provided – significa que o ambiente de execução do seu projeto (um Web Container, por exemplo) provê essa dependência. Este escopo também é utilizado para o classpath compilação e testes.
+    * runtime – como o proprio nome diz, indica que a dependência é necessária apenas em tempo de execução.
+    * test – indica que a dependência é utilizada apenas para compilar e executar testes.
+    * system – semelhante ao escopo “provided”, porém nesse caso você deve prover esta dependência, pois o Maven não ira buscá-la em um repositório.
+    * import – apenas disponível a partir do Maven 2.0.9, é utilizada apenas para dependências do tipo POM e para trabalhar com substituição de dependências e dependências transitivas.
+
+

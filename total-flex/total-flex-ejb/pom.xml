@@ -14,21 +14,17 @@
     <url>http://maven.apache.org</url>
 
     
-    <dependencies>
-
-        
+    <dependencies>        
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
             <version>2.0.1</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>6.0</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -47,6 +43,13 @@
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyLocale_pt_BR</artifactId>
             <version>10.5.3.0_1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -118,3 +121,4 @@
         </profile>
     </profiles>
 </project>
+

@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
  * @author clayton
  */
 @Entity
-public class TabelaPreco implements Serializable {
+public class TabelaPreco implements Serializable, EntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id

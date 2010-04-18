@@ -5,10 +5,13 @@
 
 package com.passos.model;
 
+import com.passos.model.entidade.EntidadeBase;
+import java.util.HashMap;
+
 /**
  *
  * @author clayton
  */
-public class Context {
+public class Context extends HashMap<Enum, EntidadeBase>{
 
 }

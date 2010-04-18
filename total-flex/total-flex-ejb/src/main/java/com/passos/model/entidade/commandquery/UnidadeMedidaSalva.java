@@ -6,13 +6,18 @@
 package com.passos.model.entidade.commandquery;
 
 import com.passos.model.Context;
-import java.util.Collection;
 
 /**
+ * chave: ECommand.SALVAR
  *
  * @author clayton
  */
-public interface IQuery {
-    public Collection execute(Context ctx);
+public class UnidadeMedidaSalva implements ICommandLocal{
+
+    @Override
+    public void execute(Context ctx) {
+        System.out.println("Salvando " + ctx.get(ECommand.SALVAR));
+
+    }
 
 }

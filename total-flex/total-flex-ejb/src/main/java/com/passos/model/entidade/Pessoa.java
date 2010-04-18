@@ -1,7 +1,6 @@
 package com.passos.model.entidade;
 
 import java.io.Serializable;
-import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +12,7 @@ import javax.validation.constraints.NotNull;
  * @author clayton
  */
 @Entity
-public class Pessoa implements Serializable {
+public class Pessoa implements Serializable, EntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id

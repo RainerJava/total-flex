@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
  * @author clayton
  */
 @Entity
-public class Produto implements Serializable {
+public class Produto implements Serializable, EntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id

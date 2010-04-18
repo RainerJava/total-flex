@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
  * @author clayton
  */
 @Entity
-public class ProdutoTabelaPreco implements Serializable {
+public class ProdutoTabelaPreco implements Serializable, EntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id

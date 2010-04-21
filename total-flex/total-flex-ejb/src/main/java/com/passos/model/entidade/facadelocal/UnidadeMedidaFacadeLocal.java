@@ -1,6 +1,6 @@
-package com.passos.model.entidade.facade;
+package com.passos.model.entidade.facadelocal;
 
-import com.passos.model.entidade.TabelaPreco;
+import com.passos.model.entidade.UnidadeMedida;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,54 +14,47 @@ import javax.persistence.criteria.Root;
  * @author Clayton K. N. Passos
  */
 @Stateless
-public class TabelaPrecoFacade implements IFacadeLocal<TabelaPreco> {
-
+public class UnidadeMedidaFacadeLocal implements IFacadeLocal<UnidadeMedida> {
     @PersistenceContext(unitName = "up-tf")
     private EntityManager em;
 
-    @Override
-    public void salvar(TabelaPreco tabelaPreco) {
-        em.persist(tabelaPreco);
+    public void salvar(UnidadeMedida unidadeMedida) {
+        em.persist(unidadeMedida);
     }
 
-    @Override
-    public void atualizar(TabelaPreco tabelaPreco) {
-        em.merge(tabelaPreco);
+    public void atualizar(UnidadeMedida unidadeMedida) {
+        em.merge(unidadeMedida);
     }
 
-    @Override
-    public void excluir(TabelaPreco tabelaPreco) {
-        em.remove(em.merge(tabelaPreco));
+    public void excluir(UnidadeMedida unidadeMedida) {
+        em.remove(em.merge(unidadeMedida));
     }
 
-    @Override
-    public TabelaPreco find(Long id) {
-        return em.find(TabelaPreco.class, id);
+    public UnidadeMedida find(Long id) {
+        return em.find(UnidadeMedida.class, id);
     }
 
-    @Override
-    public List<TabelaPreco> findAll() {
+    public List<UnidadeMedida> findAll() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(TabelaPreco.class));
+        cq.select(cq.from(UnidadeMedida.class));
         return em.createQuery(cq).getResultList();
     }
 
-    @Override
-    public List<TabelaPreco> findRange(int[] range) {
+    public List<UnidadeMedida> findRange(int[] range) {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(TabelaPreco.class));
+        cq.select(cq.from(UnidadeMedida.class));
         Query q = em.createQuery(cq);
         q.setMaxResults(range[1] - range[0]);
         q.setFirstResult(range[0]);
         return q.getResultList();
     }
 
-    @Override
     public int count() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        Root<TabelaPreco> rt = cq.from(TabelaPreco.class);
+        Root<UnidadeMedida> rt = cq.from(UnidadeMedida.class);
         cq.select(em.getCriteriaBuilder().count(rt));
         Query q = em.createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
+
 }

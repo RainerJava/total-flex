@@ -15,7 +15,7 @@ import javax.persistence.criteria.Root;
  */
 @Stateless
 public class UnidadeMedidaFacadeLocal implements IFacadeLocal<UnidadeMedida> {
-    @PersistenceContext(unitName = "up-tf")
+    @PersistenceContext(unitName = "db-tf")
     private EntityManager em;
 
     public void salvar(UnidadeMedida unidadeMedida) {

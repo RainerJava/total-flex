@@ -15,8 +15,6 @@
     </modules>
 
 
-
-
     <repositories>
         <repository>
             <id>java.net2</id>
@@ -34,8 +32,6 @@
             <id>EclipseLink Repo</id>
             <url>http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo</url>
         </repository>
-        
-
     </repositories>
 
     <pluginRepositories>

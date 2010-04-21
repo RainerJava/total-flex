@@ -19,7 +19,7 @@ public class UnidadeMedidaFacadeRemote implements IFacadeRemote<UnidadeMedida> {
     @Override
     public void salvar(UnidadeMedida um) {
         System.out.println("salvando " + um);
-        //    unidadeMedidaFacadeLocal.salvar(um);
+        unidadeMedidaFacadeLocal.salvar(um);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class UnidadeMedidaFacadeRemote implements IFacadeRemote<UnidadeMedida> {
     }
 
     @Override
-    public UnidadeMedida find(Object id) {
+    public UnidadeMedida find(Long id) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

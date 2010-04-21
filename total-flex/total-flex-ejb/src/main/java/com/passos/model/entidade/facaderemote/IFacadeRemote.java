@@ -18,7 +18,7 @@ public interface IFacadeRemote<E extends EntidadeBase> {
 
     public void excluir(UnidadeMedida unidadeMedida);
 
-    public UnidadeMedida find(Object id);
+    public UnidadeMedida find(Long id);
 
     public List<UnidadeMedida> findAll();
 

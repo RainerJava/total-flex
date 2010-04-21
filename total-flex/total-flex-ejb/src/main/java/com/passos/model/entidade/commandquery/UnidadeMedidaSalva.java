@@ -5,7 +5,8 @@
 
 package com.passos.model.entidade.commandquery;
 
-import com.passos.model.Context;
+import com.passos.model.entidade.EntidadeBase;
+import java.util.Map;
 
 /**
  * chave: ECommand.SALVAR
@@ -15,8 +16,8 @@ import com.passos.model.Context;
 public class UnidadeMedidaSalva implements ICommandLocal{
 
     @Override
-    public void execute(Context ctx) {
-        System.out.println("Salvando " + ctx.get(ECommand.SALVAR));
+    public void execute(Map<ECommand, EntidadeBase> map) {
+        System.out.println("Salvando " + map.get(ECommand.SALVAR));
 
     }
 

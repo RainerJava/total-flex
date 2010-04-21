@@ -5,8 +5,9 @@
 
 package com.passos.model.entidade.commandquery;
 
-import com.passos.model.Context;
+import com.passos.model.entidade.EntidadeBase;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.Collection;
 public class UnidadeMedidaPesquisa implements IQueryLocal {
 
     @Override
-    public Collection execute(Context ctx) {
+    public Collection execute(Map<EQuery, EntidadeBase> map) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

@@ -4,8 +4,10 @@
  */
 package com.passos.model.entidade.commandquery;
 
-import com.passos.model.Context;
+import com.passos.model.entidade.EntidadeBase;
 import com.passos.model.entidade.UnidadeMedida;
+import java.util.HashMap;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -22,16 +24,16 @@ public class UnidadeMedidaBean implements IUnidadeMedidaLocal {
     @Override
     public void salvar(UnidadeMedida um) {
 
-        Context ctx = new Context();
-        ctx.put(ECommand.SALVAR, um);
-        ums.execute(ctx);
+        Map<ECommand, EntidadeBase> map = new HashMap<ECommand, EntidadeBase>();
+        map.put(ECommand.SALVAR, um);
+        ums.execute(map);
 
     }
 
     @Override
     public void excluir(UnidadeMedida um) {
-        Context ctx = new Context();
-        ctx.put(ECommand.EXCLUIR, um);
-        ums.execute(ctx);
+        Map<ECommand, EntidadeBase> map = new HashMap<ECommand, EntidadeBase>();
+        map.put(ECommand.EXCLUIR, um);
+        ums.execute(map);
     }
 }

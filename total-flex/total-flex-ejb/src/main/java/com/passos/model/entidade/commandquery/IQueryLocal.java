@@ -5,8 +5,9 @@
 
 package com.passos.model.entidade.commandquery;
 
-import com.passos.model.Context;
+import com.passos.model.entidade.EntidadeBase;
 import java.util.Collection;
+import java.util.Map;
 import javax.ejb.Local;
 
 /**
@@ -15,6 +16,6 @@ import javax.ejb.Local;
  */
 @Local
 public interface IQueryLocal {
-    public Collection execute(Context ctx);
+    public Collection execute(Map<EQuery, EntidadeBase> map);
 
 }

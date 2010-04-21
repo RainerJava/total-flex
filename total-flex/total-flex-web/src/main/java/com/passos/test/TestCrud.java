@@ -6,10 +6,9 @@ package com.passos.test;
 
 import com.abien.patterns.kitchensink.BeanLocator;
 import com.passos.model.entidade.UnidadeMedida;
-import com.passos.model.entidade.facaderemote.UnidadeMedidaFacadeRemote;
+import com.passos.model.entidade.facaderemote.IFacadeRemote;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 public class TestCrud extends HttpServlet {
 
     
-    UnidadeMedidaFacadeRemote umRemote;
+    IFacadeRemote umRemote;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,7 +36,7 @@ public class TestCrud extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            umRemote = (UnidadeMedidaFacadeRemote) BeanLocator.lookup("");
+            umRemote = (IFacadeRemote) BeanLocator.lookup("");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet TestCrud</title>");  

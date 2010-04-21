@@ -4,33 +4,16 @@
     <parent>
         <artifactId>total-flex</artifactId>
         <groupId>com.passos</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
-    
+
     <groupId>com.passos</groupId>
     <artifactId>total-flex-web</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>total-flex-web Java EE 6 Webapp</name>
     <url>http://maven.apache.org</url>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.passos</groupId>
-            <artifactId>total-flex-ejb</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>ejb</type>
-        </dependency>
-    </dependencies>
-    
     <build>
         <plugins>
             <plugin>
@@ -53,8 +36,25 @@
         </plugins>
         <finalName>total-flex-web</finalName>
     </build>
-
     
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.passos</groupId>
+            <artifactId>total-flex-model</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+
+
     <profiles>
         <profile>
             <id>endorsed</id>

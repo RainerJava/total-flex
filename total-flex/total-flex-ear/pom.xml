@@ -4,12 +4,13 @@
     <parent>
         <artifactId>total-flex</artifactId>
         <groupId>com.passos</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
+    
     <groupId>com.passos</groupId>
     <artifactId>total-flex-ear</artifactId>
     <packaging>ear</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>total-flex-ear JavaEE6 Assembly</name>
     <url>http://maven.apache.org</url>
 
@@ -42,13 +43,14 @@
         <dependency>
             <groupId>com.passos</groupId>
             <artifactId>total-flex-ejb</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <type>ejb</type>
         </dependency>
+        
         <dependency>
             <groupId>com.passos</groupId>
             <artifactId>total-flex-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <type>war</type>
         </dependency>
 

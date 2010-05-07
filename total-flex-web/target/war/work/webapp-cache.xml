@@ -1,0 +1,45 @@
+<webapp-structure>
+  <registeredFiles>
+    <entry>
+      <string>currentBuild</string>
+      <path-set>
+        <pathsSet class="linked-hash-set">
+          <string>index.jsp</string>
+          <string>WEB-INF/sun-web.xml</string>
+          <string>WEB-INF/web.xml</string>
+          <string>WEB-INF/classes/com/passos/test/TestCrud.class</string>
+          <string>WEB-INF/lib/total-flex-ejb-1.0.jar</string>
+          <string>WEB-INF/lib/eclipselink-2.0.1.jar</string>
+          <string>WEB-INF/lib/derbyclient-10.5.3.0_1.jar</string>
+          <string>WEB-INF/lib/derbyLocale_pt_BR-10.5.3.0_1.jar</string>
+          <string>WEB-INF/lib/derby-10.5.3.0_1.jar</string>
+        </pathsSet>
+      </path-set>
+    </entry>
+  </registeredFiles>
+  <dependenciesInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-web-api</artifactId>
+        <version>6.0</version>
+        <type>jar</type>
+        <scope>provided</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>com.passos</groupId>
+        <artifactId>total-flex-ejb</artifactId>
+        <version>1.0</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>total-flex-ejb-1.0.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+  </dependenciesInfo>
+</webapp-structure>

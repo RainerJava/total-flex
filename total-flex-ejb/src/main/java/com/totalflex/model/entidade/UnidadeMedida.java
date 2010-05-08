@@ -26,15 +26,14 @@ public class UnidadeMedida implements Serializable, EntidadeBase {
     @NotNull
     @Size(max = 255)
     private String nome;
-    
     @NotNull
-    @Size(max = 10)
+    @Size(max = 2)
     private String abreviatura;
 
-    protected  UnidadeMedida() {
+    protected UnidadeMedida() {
     }
 
-    public UnidadeMedida(@NotNull String nome, @NotNull String abreviatura) {
+    public UnidadeMedida(@NotNull String nome, @NotNull @Size(max = 2) String abreviatura) {
         this.nome = nome;
         this.abreviatura = abreviatura;
     }
@@ -43,7 +42,7 @@ public class UnidadeMedida implements Serializable, EntidadeBase {
         return abreviatura;
     }
 
-    public void setAbreviatura(String abreviatura) {
+    public void setAbreviatura(@NotNull @Size(max = 2) String abreviatura) {
         this.abreviatura = abreviatura;
     }
 
@@ -61,10 +60,5 @@ public class UnidadeMedida implements Serializable, EntidadeBase {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "...entidade.UnidadeMedida[id=" + id + "]";
     }
 }

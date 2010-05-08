@@ -1,0 +1,21 @@
+EJB 3.1 lite contempla:
+	Session bean do tipo stateless, statefull e singleton
+		Apenas interface local
+		Somente chamadas síncronas a métodos
+
+	Transações gerenciadas pelo contêiner e programaticamente
+	Segurança declarativa e programática
+	Interceptors
+	Suporte a Deployment Descriptor (ejb-jar.xml)
+	Java Peersistence API 2.0
+	Embeddable API.
+
+
+EJB 3.1 lite não contempla:
+	Interface remota para session beans
+	EJB 2.x
+	Message Driven Beans
+	Chamada assíncronas
+	Web Service JAX-WS e JAX-RPC
+	EJB TimerService
+	Interoperabilidade RMI-IIOP

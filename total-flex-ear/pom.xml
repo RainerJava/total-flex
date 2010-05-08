@@ -48,13 +48,6 @@
 
         <dependency>
             <groupId>com.passos</groupId>
-            <artifactId>total-flex-model</artifactId>
-            <version>${totalflex.versao}</version>
-            <type>jar</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.passos</groupId>
             <artifactId>total-flex-web</artifactId>
             <version>${totalflex.versao}</version>
             <type>war</type>

@@ -1,0 +1,51 @@
+Sintaxe:
+java:global[/<app-name>]/<module-name>/<bean-name>![!fully-qualified-interface-name>]
+java:app[/<module-name>]/<bean-name>[!<fully-qualified-interface-name>]
+java:module/<bean-name>[!<fully-qualified-interface-name>]
+
+
+Nomes JNDI para implantação do bean empacotado diretamente no app-ejb.jar:
+	java:global/app-ejb.jar/GerenciadorPedidos
+	java:global/app-ejb.jar/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:app/GerenciadorPedidos
+	java:app/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos.
+	
+	java:module/GerenciadorPedidos
+	java:module/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	
+	
+Nomes JNDI para implantação do beam empacotado no app-ejb.jar que por sua vez é empacotado no app.ear:
+	java:global/app/app-ejb/GerenciadorPedidos
+	java:global/app/app-ejb/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:app/app-ejb/GerenciadorPedidos
+	java:app/app-ejb/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:module/GerenciadorPedidos
+	java:module/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	
+
+Nomes JNDI para implantação do bean empacotado no app-web.war, que por sua vez é empacotado no app.ear
+	java:global/app/app-web/GerenciadorPedidos
+	java:global/app/app-web/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:app/app-web/GerenciadorPedidos
+	java:app/app-web/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:module/GerenciadorPedidos
+	java:module/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	
+
+Nomes JNDI para implantação do beam empacotado no app-web.war, que por sua vez é empacotado no app.ear
+	java:global/app/app-web/GerenciadorPedidos
+	java:global/app/app-web/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:app/app-web/GerenciadorPedidos
+	java:app/app-web/GerenciadorPedidos!br.com.globalcode.ejb.GerenciadorPedidos
+	
+	java:module/GerenciadorPedidos
+	java:module/GerenciadorPEdidos!br.com.globalcode.ejb.GerenciadorPedidos

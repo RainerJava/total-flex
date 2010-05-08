@@ -3,6 +3,7 @@ package com.totalflex.ejb.facadelocal;
 
 import com.totalflex.model.entidade.UnidadeMedida;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,32 +16,39 @@ import javax.persistence.criteria.Root;
  * @author Clayton K. N. Passos
  */
 @Stateless(name="UnidadeMedidaFacadeLocal")
+@EJB()
 public class UnidadeMedidaFacadeLocal implements IFacadeLocal<UnidadeMedida> {
     @PersistenceContext(unitName = "db-tf")
     private EntityManager em;
 
+    @Override
     public void salvar(UnidadeMedida unidadeMedida) {
         em.persist(unidadeMedida);
     }
 
+    @Override
     public void atualizar(UnidadeMedida unidadeMedida) {
         em.merge(unidadeMedida);
     }
 
+    @Override
     public void excluir(UnidadeMedida unidadeMedida) {
         em.remove(em.merge(unidadeMedida));
     }
 
+    @Override
     public UnidadeMedida find(Long id) {
         return em.find(UnidadeMedida.class, id);
     }
 
+    @Override
     public List<UnidadeMedida> findAll() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(UnidadeMedida.class));
         return em.createQuery(cq).getResultList();
     }
 
+    @Override
     public List<UnidadeMedida> findRange(int[] range) {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(UnidadeMedida.class));
@@ -50,6 +58,7 @@ public class UnidadeMedidaFacadeLocal implements IFacadeLocal<UnidadeMedida> {
         return q.getResultList();
     }
 
+    @Override
     public int count() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         Root<UnidadeMedida> rt = cq.from(UnidadeMedida.class);

@@ -2,20 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.totalflex.model.entidade;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 /**
  *
- * @author clayton
+ * @author Clayton K. N. Passos
  */
 @Entity
 public class TabelaPreco implements Serializable, EntidadeBase {
@@ -24,11 +23,18 @@ public class TabelaPreco implements Serializable, EntidadeBase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String nome;
+    private String descricao;
+    @ManyToMany(mappedBy = "tabelaPrecoSet")
+    private Set<Produto> produtoSet;
 
-    @OneToMany(mappedBy = "tabelaPreco")
-    private List<ProdutoTabelaPreco> produtoTabelaPrecoList;
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public String getNome() {
         return nome;
@@ -38,14 +44,6 @@ public class TabelaPreco implements Serializable, EntidadeBase {
         this.nome = nome;
     }
 
-    public List<ProdutoTabelaPreco> getProdutoTabelaPrecoList() {
-        return produtoTabelaPrecoList;
-    }
-
-    public void setProdutoTabelaPrecoList(List<ProdutoTabelaPreco> produtoTabelaPrecoList) {
-        this.produtoTabelaPrecoList = produtoTabelaPrecoList;
-    }
-
     public Long getId() {
         return id;
     }
@@ -53,10 +51,12 @@ public class TabelaPreco implements Serializable, EntidadeBase {
     public void setId(Long id) {
         this.id = id;
     }
-    
-    @Override
-    public String toString() {
-        return "com.passos.model.entidade.TabelaPreco[id=" + id + "]";
+
+    public Set<Produto> getProdutoSet() {
+        return produtoSet;
     }
 
+    public void setProdutoSet(Set<Produto> produtoSet) {
+        this.produtoSet = produtoSet;
+    }
 }

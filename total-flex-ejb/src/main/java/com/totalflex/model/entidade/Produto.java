@@ -5,12 +5,14 @@
 package com.totalflex.model.entidade;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -28,17 +30,20 @@ public class Produto implements Serializable, EntidadeBase {
     @NotNull
     @Size(max = 255)
     private String nome;
+    /**
+     * Reservado para armazenar o código do fornecedor do produto
+     */
+    @Size(max = 50)
+    private String codigoFornecedor;
 
-    @OneToMany(mappedBy = "produto")
-    private List<ProdutoTabelaPreco> produtoTabelaPrecoList;
-
-    public List<ProdutoTabelaPreco> getProdutoTabelaPrecoList() {
-        return produtoTabelaPrecoList;
+    @ManyToMany
+    @JoinTable(name = "Produto_TabelaPreco", joinColumns = {
+        @JoinColumn(name = "idProduto")}, inverseJoinColumns = {
+        @JoinColumn(name = "idTabelaPreco")})
+    public void setCodigoFornecedor(String codigoFornecedor) {
+        this.codigoFornecedor = codigoFornecedor;
     }
 
-    public void setProdutoTabelaPrecoList(List<ProdutoTabelaPreco> produtoTabelaPrecoList) {
-        this.produtoTabelaPrecoList = produtoTabelaPrecoList;
-    }
 
     public String getNome() {
         return nome;
@@ -55,9 +60,9 @@ public class Produto implements Serializable, EntidadeBase {
     public void setId(Long id) {
         this.id = id;
     }
+    private Set<TabelaPreco> produtoTabelaSet;
 
-    @Override
-    public String toString() {
-        return "com.passos.model.entidade.Produto[id=" + id + "]";
+    public String getCodigoFornecedor() {
+        return codigoFornecedor;
     }
 }

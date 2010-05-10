@@ -9,6 +9,12 @@ Flex
 	+- Como o frontend irá se comunicar com a camada logo abaixo?
 
 	+- http://www.infoq.com/br/news/2009/03/flight-framework (MVC aparentemente melhor que Cairngorm)
+	+- http://www.igorcosta.com/blog/?p=541 (CEP, CPF, CNPJ)
+	+- Full Lazy Load para BlazeDS – http://code.google.com/p/dphibernate/\
+	+- http://mate.asfusion.com/
+	+- A collection of maven plugins to allow maven to compile, optimize, and test Flex SWF, Flex SWC, Air SWF, Air SWC and Air package
+http://flexmojos.sonatype.org/
+
 
 
 JSF

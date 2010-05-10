@@ -24,12 +24,15 @@ import javax.validation.constraints.Size;
 public class Produto implements Serializable, EntidadeBase {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @NotNull
     @Size(max = 255)
     private String nome;
+
     /**
      * Reservado para armazenar o código do fornecedor do produto
      */
@@ -40,10 +43,11 @@ public class Produto implements Serializable, EntidadeBase {
     @JoinTable(name = "Produto_TabelaPreco", joinColumns = {
         @JoinColumn(name = "idProduto")}, inverseJoinColumns = {
         @JoinColumn(name = "idTabelaPreco")})
+    private Set<TabelaPreco> tabelaPrecoSet;
+
     public void setCodigoFornecedor(String codigoFornecedor) {
         this.codigoFornecedor = codigoFornecedor;
     }
-
 
     public String getNome() {
         return nome;
@@ -60,9 +64,16 @@ public class Produto implements Serializable, EntidadeBase {
     public void setId(Long id) {
         this.id = id;
     }
-    private Set<TabelaPreco> produtoTabelaSet;
 
     public String getCodigoFornecedor() {
         return codigoFornecedor;
+    }
+
+    public Set<TabelaPreco> getTabelaPrecoSet() {
+        return tabelaPrecoSet;
+    }
+
+    public void setTabelaPrecoSet(Set<TabelaPreco> tabelaPrecoSet) {
+        this.tabelaPrecoSet = tabelaPrecoSet;
     }
 }

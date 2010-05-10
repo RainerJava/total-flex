@@ -1,0 +1,51 @@
+=================== DEFINIÇÃO DE ARQUITETURA E TECNOLOGIA PARA O PROJETO CAT ===================
+
+
+
+Flex
+	+- Como modularizar o frontend da aplicação em Flex de forma a carregar sob demanda?
+	+- Como modularizar de forma a descarregar oque não está sendo usado?
+
+	+- Como o frontend irá se comunicar com a camada logo abaixo?
+
+	+- http://www.infoq.com/br/news/2009/03/flight-framework (MVC aparentemente melhor que Cairngorm)
+
+
+JSF
+	+- Ver JSFUnit
+
+
+
+** PERSISTÊNICIA **
+
+JPA2, EJB 3.1
+	+- Colocar regras de negócio dentro da entidade? 
+		+- Acredito que não, pois seria um overhead a mais na transição dos objetos pela rede.
+		+- Acredito que não, pois como ficaria os métodos que realizam operações no banco de dados, se o objeto esta remoto?
+
+AutoDAO 
+	+- http://autodao.sourceforge.net/
+	+- http://redmine.synyx.org/projects/show/hades
+	+- http://grepo.codehaus.org/
+	+- http://code.google.com/p/polyforms/
+	+- http://www.wideplay.com/dynamicfinders
+
+
+
+			+- A menos que se crie uma interface que o permita, de forma a reconhecer se o objeto esta no container e quando esta fora.
+
+
+Joda  - para simplificar calculos de datas
+
+
+
+=================== TESTES ===================
+TESTES DE NEGÓCIO
+FlexUnit       -> testes flex da adobe
+JUnit          -> teste unitário
+JUnit + DBUnit -> testes funcionais
+
+TESTES DE TELA
+????           -> teste de integração com o usuário (tela)
+JSFUnit        -> teste de integração com o usuário (tela) http://www.jboss.org/jsfunit/downloads.html
+

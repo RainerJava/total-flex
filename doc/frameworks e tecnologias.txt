@@ -1,7 +1,5 @@
 =================== DEFINIÇÃO DE ARQUITETURA E TECNOLOGIA PARA O PROJETO CAT ===================
 
-
-
 Flex
 	+- Como modularizar o frontend da aplicação em Flex de forma a carregar sob demanda?
 	+- Como modularizar de forma a descarregar oque não está sendo usado?
@@ -12,14 +10,8 @@ Flex
 	+- http://www.igorcosta.com/blog/?p=541 (CEP, CPF, CNPJ)
 	+- Full Lazy Load para BlazeDS – http://code.google.com/p/dphibernate/\
 	+- http://mate.asfusion.com/
-	+- A collection of maven plugins to allow maven to compile, optimize, and test Flex SWF, Flex SWC, Air SWF, Air SWC and Air package
-http://flexmojos.sonatype.org/
-
-
-
-JSF
-	+- Ver JSFUnit
-
+	+- Log4Fx (http://www.myflex.org/#products)
+        +- Spring-Flex - Para simplificar o mapeamento dos "Destination" e não ter uma explosão no .XML do Flex
 
 
 ** PERSISTÊNICIA **
@@ -36,8 +28,6 @@ AutoDAO
 	+- http://code.google.com/p/polyforms/
 	+- http://www.wideplay.com/dynamicfinders
 
-
-
 			+- A menos que se crie uma interface que o permita, de forma a reconhecer se o objeto esta no container e quando esta fora.
 
 
@@ -47,11 +37,16 @@ Joda  - para simplificar calculos de datas
 
 =================== TESTES ===================
 TESTES DE NEGÓCIO
-FlexUnit       -> testes flex da adobe
+
 JUnit          -> teste unitário
-JUnit + DBUnit -> testes funcionais
+JUnit + DBUnit -> testes funcionais (verificar como adotar a "Estratégia Objective" de testes)
 
 TESTES DE TELA
-????           -> teste de integração com o usuário (tela)
-JSFUnit        -> teste de integração com o usuário (tela) http://www.jboss.org/jsfunit/downloads.html
+FlexUnit       -> testes flex da adobe
+Fluint         -> melhor que FlexUnit, suporta AIR, suporte assíncrono robusto, sequenciamento de teste, testa componentes UI. (code.google.com/p/fluint) 
+FunFx          -> não esta maduro ainda, teste funcional, escrito em Ruby (files.rubyforge.vm.bytemark.co.uk/funfx)
 
+
+DEBUG
+FxSpy          -> Permite inspecionar seus componentes e ver como estão configuradas ao mesmo tempo que permite manipulalas
+(code.google.com/p/fxspy)

@@ -13,6 +13,14 @@ Flex
         +- Spring-Flex - Para simplificar o mapeamento dos "Destination" e não ter uma explosão no .XML do Flex
 
 
+** COMPONENTES FLEX **
+Yahoo Astra Flex – http://developer.yahoo.com/flash/astra-flex/
+Um conjunto de componentes para o flex de uma grande utilidades. Contem componentes como AutoCompleteManager, ColorPlaneAndSliderPicker, ColorSliderPicker, DropDownColorPicker, IPv4AddressInput, TimeInput, ou TimeStepper
+
+
+
+
+
 ** PERSISTÊNICIA **
 
 JPA2, EJB 3.1
@@ -49,3 +57,6 @@ FunFx          -> não esta maduro ainda, teste funcional, escrito em Ruby (files
 DEBUG
 FxSpy          -> Permite inspecionar seus componentes e ver como estão configuradas ao mesmo tempo que permite manipulalas
 (code.google.com/p/fxspy)
+
+Flex Debug Component – http://www.mikenimer.com/index.cfm/2006/7/5/FlexDebugPanel
+Um debugger para o flex, permite observar variados dados em tempo de execução.

@@ -9,8 +9,9 @@
 
     <modules>
         <module>total-flex-ear</module>
-        <module>total-flex-web</module>
+        <module>total-flex-webjsf</module>
         <module>total-flex-ejb</module>
+        <module>total-flex-webflex</module>
     </modules>
 
     <properties>

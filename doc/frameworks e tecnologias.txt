@@ -11,6 +11,8 @@ Flex
 	+- http://mate.asfusion.com/ -> MVC (Controller?)
 	+- Log4Fx (http://www.myflex.org/#products)
         +- Spring-Flex - Para simplificar o mapeamento dos "Destination" e não ter uma explosão no .XML do Flex
+		
+	+- http://code.google.com/p/flex-iframe -> 	Carrega uma página web dentro da aplicação.
 
 
 ** COMPONENTES FLEX **

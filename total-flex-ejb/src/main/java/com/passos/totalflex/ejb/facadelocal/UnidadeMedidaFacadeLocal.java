@@ -1,12 +1,9 @@
 package com.passos.totalflex.ejb.facadelocal;
 
-
 import com.passos.totalflex.ejb.entidade.UnidadeMedida;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -15,11 +12,9 @@ import javax.persistence.criteria.Root;
  *
  * @author Clayton K. N. Passos
  */
-@Stateless(name="UnidadeMedidaFacadeLocal")
+@Stateless(name = "UnidadeMedidaFacadeLocal")
 @EJB()
-public class UnidadeMedidaFacadeLocal implements IFacadeLocal<UnidadeMedida> {
-    @PersistenceContext(unitName = "db-tf")
-    private EntityManager em;
+public class UnidadeMedidaFacadeLocal extends AFacadeLocal implements IFacadeLocal<UnidadeMedida> {
 
     @Override
     public void salvar(UnidadeMedida unidadeMedida) {
@@ -66,5 +61,4 @@ public class UnidadeMedidaFacadeLocal implements IFacadeLocal<UnidadeMedida> {
         Query q = em.createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
-
 }

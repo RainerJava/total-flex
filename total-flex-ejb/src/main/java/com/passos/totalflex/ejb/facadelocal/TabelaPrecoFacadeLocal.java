@@ -14,10 +14,7 @@ import javax.persistence.criteria.Root;
  * @author Clayton K. N. Passos
  */
 @Stateless(name="TabelaPrecoFacadeLocal")
-public class TabelaPrecoFacadeLocal implements IFacadeLocal<TabelaPreco> {
-
-    @PersistenceContext(unitName = "db-tf")
-    private EntityManager em;
+public class TabelaPrecoFacadeLocal extends AFacadeLocal implements IFacadeLocal<TabelaPreco> {
 
     @Override
     public void salvar(TabelaPreco tabelaPreco) {

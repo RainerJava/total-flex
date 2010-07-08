@@ -9,6 +9,7 @@
     </head>
     <body>
         <h1>JSF2</h1>
-        <a href="TestCrud"> testCrud</a>
+        <a href="TestCrud">testCrud</a>
+        <a href="jsp_servlet/UnidadeDeMedida.jsp">Unidade de medida</a>
     </body>
 </html>

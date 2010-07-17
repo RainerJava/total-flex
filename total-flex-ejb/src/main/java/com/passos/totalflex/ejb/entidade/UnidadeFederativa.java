@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.passos.totalflex.ejb.entidade;
 
 import java.io.Serializable;
@@ -19,17 +18,26 @@ import javax.validation.constraints.Size;
  */
 @Entity
 public class UnidadeFederativa implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @Size(max = 50)
     @NotNull
     private String nome;
 
-    @Size(max = 2)
+    @NotNull
+    @Size(max = 2, min = 2)
     private String abreviacao;
+
+    public UnidadeFederativa() {
+    }
+
+    public UnidadeFederativa(String nome, String abreviacao) {
+        this.nome = nome;
+        this.abreviacao = abreviacao;
+    }
 
     public String getAbreviacao() {
         return abreviacao;
@@ -55,4 +63,7 @@ public class UnidadeFederativa implements Serializable {
         this.id = id;
     }
 
+    public String toString(){
+        return this.abreviacao;
+    }
 }

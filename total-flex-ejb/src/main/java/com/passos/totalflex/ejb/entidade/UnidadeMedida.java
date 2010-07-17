@@ -28,22 +28,22 @@ public class UnidadeMedida implements Serializable, EntidadeBase {
     private String nome;
     @NotNull
     @Size(max = 2)
-    private String abreviatura;
+    private String abreviacao;
 
     protected UnidadeMedida() {
     }
 
-    public UnidadeMedida(@NotNull String nome, @NotNull @Size(max = 2) String abreviatura) {
+    public UnidadeMedida(@NotNull String nome, @NotNull @Size(max = 2) String abreviacao) {
         this.nome = nome;
-        this.abreviatura = abreviatura;
+        this.abreviacao = abreviacao;
     }
 
-    public String getAbreviatura() {
-        return abreviatura;
+    public String getabreviacao() {
+        return abreviacao;
     }
 
-    public void setAbreviatura(@NotNull @Size(max = 2) String abreviatura) {
-        this.abreviatura = abreviatura;
+    public void setabreviacao(@NotNull @Size(max = 2) String abreviacao) {
+        this.abreviacao = abreviacao;
     }
 
     public String getNome() {

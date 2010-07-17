@@ -30,7 +30,7 @@ public class Produto implements Serializable, EntidadeBase {
     private Long id;
 
     @NotNull
-    @Size(max = 255)
+    @Size(max = 255, min = 2)
     private String nome;
 
     /**

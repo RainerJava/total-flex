@@ -8,8 +8,8 @@
         <title>JSF2</title>
     </head>
     <body>
-        <h1>JSF2</h1>
-        <a href="TestCrud">testCrud</a>
-        <a href="jsp_servlet/UnidadeDeMedida.jsp">Unidade de medida</a>
+        <h1>Crud Servlet</h1>
+        <a href="jsp_servlet/UnidadeDeMedidaFrm.jsp">Unidade de medida</a>
+        <a href="jsp_servlet/UnidadeFederativaFrm.jsp">Unidade Federativa</a>
     </body>
 </html>

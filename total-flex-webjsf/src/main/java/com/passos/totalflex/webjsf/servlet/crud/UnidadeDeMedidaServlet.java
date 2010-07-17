@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class UnidadeDeMedidaServlet extends HttpServlet {
      @EJB(beanName="UnidadeMedidaFacadeLocal")
-    private IFacadeLocal umRemote;
+    private IFacadeLocal umLocal;
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,10 +32,10 @@ public class UnidadeDeMedidaServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String nome = request.getParameter("nome");
-        String abreviatura = request.getParameter("abreviatura");
+        String abreviacao = request.getParameter("abreviacao");
         
-        UnidadeMedida um = new UnidadeMedida(nome, abreviatura);
-        umRemote.salvar(um);
+        UnidadeMedida um = new UnidadeMedida(nome, abreviacao);
+        umLocal.salvar(um);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

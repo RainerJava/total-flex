@@ -13,7 +13,6 @@ import javax.persistence.criteria.Root;
  * @author Clayton K. N. Passos
  */
 @Stateless(name = "UnidadeMedidaFacadeLocal")
-@EJB()
 public class UnidadeMedidaFacadeLocal extends AFacadeLocal implements IFacadeLocal<UnidadeMedida> {
 
     @Override

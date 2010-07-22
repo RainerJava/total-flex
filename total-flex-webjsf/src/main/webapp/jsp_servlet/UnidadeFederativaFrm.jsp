@@ -15,10 +15,11 @@
     </head>
     <body>
         <h1>Cadastro de unidade federativa</h1>
-        <form action="/total-flex-webjsf/servlet/UnidadeFederativaServlet">
+        <form action="<%= application.getContextPath()%>/servlet/UnidadeFederativaServlet">
             <legend><input type="text" name="abreviacao" id="abreviacao"/> </legend>
             <legend><input type="text" name="nome" id="nome"/> </legend>
-            <button type="submit" value="Salvar" title="Salvar" id="salvar"/>
+            <button type="submit" value="Salvar"  id="salvar" name="Salvar" > </button>
+            
         </form>
     </body>
 </html>

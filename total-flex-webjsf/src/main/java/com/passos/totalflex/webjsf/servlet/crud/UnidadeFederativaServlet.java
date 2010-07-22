@@ -47,7 +47,6 @@ public class UnidadeFederativaServlet extends HttpServletBase {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp_servlet/UnidadeFederativaLst.jsp");
         request.setAttribute("findAll", unFederativa.findAll());
-        System.out.println(unFederativa.findAll());
         dispatcher.forward(request, response);
 
     }

@@ -8,6 +8,7 @@ import com.passos.totalflex.ejb.entidade.UnidadeMedida;
 import com.passos.totalflex.ejb.facadelocal.IFacadeLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author clayton.kendy
  */
 public class UnidadeDeMedidaServlet extends HttpServlet {
-     @EJB(beanName="UnidadeMedidaFacadeLocal")
+
+    @EJB(beanName = "UnidadeMedidaFacadeLocal")
     private IFacadeLocal umLocal;
 
     /** 
@@ -33,9 +35,16 @@ public class UnidadeDeMedidaServlet extends HttpServlet {
 
         String nome = request.getParameter("nome");
         String abreviacao = request.getParameter("abreviacao");
-        
+
         UnidadeMedida um = new UnidadeMedida(nome, abreviacao);
         umLocal.salvar(um);
+
+        request.setAttribute("findAll", umLocal.findAll());
+        RequestDispatcher rd = request.getRequestDispatcher("/jsp_servlet/UnidadeDeMedidaLst.jsp");
+        rd.forward(request, response);
+
+
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

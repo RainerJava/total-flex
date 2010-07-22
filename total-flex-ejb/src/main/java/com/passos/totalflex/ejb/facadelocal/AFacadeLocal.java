@@ -4,7 +4,6 @@
  */
 package com.passos.totalflex.ejb.facadelocal;
 
-import com.passos.totalflex.ejb.entidade.EntidadeBase;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -12,9 +11,8 @@ import javax.persistence.PersistenceContext;
  *
  * @author clayton.kendy
  */
-public abstract class AFacadeLocal{
+public abstract class AFacadeLocal {
 
     @PersistenceContext(unitName = "db-tf")
     protected EntityManager em;
-
 }

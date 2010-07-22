@@ -38,11 +38,11 @@ public class UnidadeMedida implements Serializable, EntidadeBase {
         this.abreviacao = abreviacao;
     }
 
-    public String getabreviacao() {
+    public String getAbreviacao() {
         return abreviacao;
     }
 
-    public void setabreviacao(@NotNull @Size(max = 2) String abreviacao) {
+    public void setAbreviacao(@NotNull @Size(max = 2) String abreviacao) {
         this.abreviacao = abreviacao;
     }
 
@@ -60,5 +60,10 @@ public class UnidadeMedida implements Serializable, EntidadeBase {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return this.getAbreviacao();
     }
 }

@@ -16,7 +16,7 @@
     <body>
         <h1>Hello World!</h1>
         <%
-            out.print(request.getParameter("findAll"));
+            out.print(request.getAttribute("findAll"));
         %>
     </body>
 </html>

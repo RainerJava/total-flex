@@ -32,6 +32,36 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
+
+            <!--
+* embedded-glasfish:run – starts the embedded server if it is not already running and deploys the specfied application. The goal keeps the server running, so the user can make changes in the application, reploy and test iteratively.
+* embedded-glassfish:start – starts the embedded server with the specified parameters
+* embedded-glassfish:deploy – deploys the specified application
+* embedded-glassfish:undeploy – undeploys the application identified by the “name” parameter. If no name is specifed all applications are undeployed.
+* embedded-glassfish:stop – stops the embedded server
+* embedded-glassfish:admin – executes the specified admin command on the embedded server. For example, you could create a jdbc resource.
+            -->
+            <plugin>
+                <groupId>org.glassfish</groupId>
+                <artifactId>maven-embedded-glassfish-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <goalPrefix>glassfish</goalPrefix>
+                    <app>webjsf.war</app>
+                    <port>8080</port>
+                    <contextRoot>test</contextRoot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
         <finalName>webjsf</finalName>
     </build>
@@ -49,6 +79,20 @@
             <groupId>com.passos</groupId>
             <artifactId>total-flex-ejb</artifactId>
             <version>${totalflex.versao}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.glassfish.extras</groupId>
+            <artifactId>glassfish-embedded-all</artifactId>
+            <version>3.0.1</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -93,6 +137,7 @@
         <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
     </properties>
 </project>
+
 
 
 

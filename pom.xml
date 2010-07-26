@@ -18,7 +18,11 @@
     </properties>
 
     <repositories>
-
+        <repository>
+            <id>glassfish-repository</id>
+            <name>Java.net Repository for Glassfish</name>
+            <url>http://download.java.net/maven/glassfish</url>
+        </repository>
 
         <repository>
             <id>java.net2</id>
@@ -42,11 +46,13 @@
             <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
             <url>http://repository.springsource.com/maven/bundles/release</url>
         </repository>
+
         <repository>
             <id>com.springsource.repository.bundles.external</id>
             <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
             <url>http://repository.springsource.com/maven/bundles/external</url>
         </repository>
+
     </repositories>
 
     <pluginRepositories>
@@ -60,6 +66,12 @@
             <name>Codehaus Snapshot Repo</name>
             <url>http://snapshots.repository.codehaus.org</url>
         </pluginRepository>
+
+        <pluginRepository>
+            <id>Glassfish</id>
+            <url>http://download.java.net/maven/glassfish/</url>
+        </pluginRepository>
+        
     </pluginRepositories>
 
 </project>

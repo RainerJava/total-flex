@@ -52,14 +52,14 @@
                     <port>8080</port>
                     <contextRoot>test</contextRoot>
                 </configuration>
-                <executions>
+                <!--executions>
                     <execution>
                         <phase>install</phase>
                         <goals>
                             <goal>run</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions-->
             </plugin>
 
         </plugins>

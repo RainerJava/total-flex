@@ -18,13 +18,14 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) //UMA TABELA POR CLASSE
-public class Pessoa implements Serializable, EntidadeBase {
+public class Pessoa implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     private Boolean excluido;
     /**
      * Endereço de cobrança, endereço de correspondência

@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  * @author Administrador
  */
 @Entity
-public class PessoaJuridica extends Pessoa implements Serializable, EntidadeBase {
+public class PessoaJuridica extends Pessoa implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
     private String cpnj;

@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
  * @author Administrador
  */
 @Entity
-public class UnidadeFederativa implements Serializable {
+public class UnidadeFederativa implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id

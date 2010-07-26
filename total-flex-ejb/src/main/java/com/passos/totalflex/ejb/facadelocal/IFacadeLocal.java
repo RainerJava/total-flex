@@ -4,7 +4,7 @@
  */
 package com.passos.totalflex.ejb.facadelocal;
 
-import com.passos.totalflex.ejb.entidade.EntidadeBase;
+import com.passos.totalflex.ejb.entidade.IEntidadeBase;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -13,7 +13,7 @@ import javax.ejb.Local;
  * @author clayton.kendy
  */
 @Local
-public interface IFacadeLocal<E extends EntidadeBase> {
+public interface IFacadeLocal<E extends IEntidadeBase> {
 
     public void salvar(E entidade);
 

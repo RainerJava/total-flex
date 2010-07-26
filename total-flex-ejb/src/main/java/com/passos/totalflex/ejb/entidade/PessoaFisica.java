@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
  * @author Clayton
  */
 @Entity
-public class PessoaFisica extends Pessoa implements Serializable, EntidadeBase {
+public class PessoaFisica extends Pessoa implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
 
@@ -48,6 +48,10 @@ public class PessoaFisica extends Pessoa implements Serializable, EntidadeBase {
 
     public void setRg(String rg) {
         this.rg = rg;
+    }
+
+    public String toString(){
+        return getNome();
     }
 
 

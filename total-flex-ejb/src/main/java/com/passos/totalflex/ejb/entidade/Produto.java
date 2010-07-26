@@ -4,6 +4,8 @@
  */
 package com.passos.totalflex.ejb.entidade;
 
+import com.passos.totalflex.ejb.entidade.IEntidadeBase;
+import com.passos.totalflex.ejb.entidade.TabelaPreco;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Entity;
@@ -21,7 +23,7 @@ import javax.validation.constraints.Size;
  * @author clayton
  */
 @Entity
-public class Produto implements Serializable, EntidadeBase {
+public class Produto implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
 

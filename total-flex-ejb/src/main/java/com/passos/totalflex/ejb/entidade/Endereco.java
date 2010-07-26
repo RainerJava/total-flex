@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
  * @author Clayton K. N. Passos
  */
 @Entity
-public class Endereco extends Contato implements Serializable, EntidadeBase {
+public class Endereco extends Contato implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @NotNull
@@ -59,5 +59,14 @@ public class Endereco extends Contato implements Serializable, EntidadeBase {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public String toString(){
+            
+        StringBuilder sb = new StringBuilder(this.getLogradouro());
+        sb.append(" numero:");
+        sb.append(this.getNumero());
+
+        return sb.toString();
     }
 }

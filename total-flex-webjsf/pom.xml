@@ -52,14 +52,14 @@
                     <port>8080</port>
                     <contextRoot>test</contextRoot>
                 </configuration>
-                <!--executions>
-                    <execution>
-                        <phase>install</phase>
+                <executions>
+                    <!--execution>
+                        <phase>test</phase>
                         <goals>
                             <goal>run</goal>
                         </goals>
-                    </execution>
-                </executions-->
+                    </execution-->
+                </executions>
             </plugin>
 
         </plugins>
@@ -68,12 +68,7 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
+
 
         <dependency>
             <groupId>com.passos</groupId>
@@ -93,6 +88,13 @@
             <artifactId>glassfish-embedded-all</artifactId>
             <version>3.0.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

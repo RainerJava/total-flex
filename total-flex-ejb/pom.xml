@@ -34,18 +34,13 @@
                 </configuration>
             </plugin>
         </plugins>
-        
+
         <finalName>total-flex-ejb</finalName>
     </build>
 
     <dependencies>
 
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
+
 
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -78,14 +73,30 @@
             <scope>test</scope>
         </dependency>
 
+        <!--
+        NOTE: It is important that you put the glassfish-embedded-all dependency BEFORE
+        the javaee-api dependency in your POM. This has an effect on your classpath
+        (first dependency is first on the classpath).
+        -->
+
+        <!-- esta dependência precisa ser antes da javaee-api
+        Caso contrário ocorrera uma:
+        java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/ejb/embeddable/EJBContainer
+        -->
+
         <dependency>
             <groupId>org.glassfish.extras</groupId>
             <artifactId>glassfish-embedded-all</artifactId>
             <version>3.0.1</version>
             <scope>test</scope>
         </dependency>
-        
 
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 

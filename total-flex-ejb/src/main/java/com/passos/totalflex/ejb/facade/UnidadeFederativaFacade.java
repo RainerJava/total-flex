@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
  *
  * @author clayton.kendy
  */
-@Stateless(name="UnidadeFederativa")
+@Stateless(name="UnidadeFederativaFacade")
 public class UnidadeFederativaFacade extends AbstractFacade<UnidadeFederativa>
         implements IFacadeLocal<UnidadeFederativa> {
 

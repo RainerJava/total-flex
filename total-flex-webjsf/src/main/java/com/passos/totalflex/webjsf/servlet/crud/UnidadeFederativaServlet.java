@@ -25,7 +25,7 @@ public class UnidadeFederativaServlet extends HttpServletBase {
     //[java:global/com.passos_total-flex-webjsf_war_1.0/UnidadeFederativa!com.passos.totalflex.ejb.facade.IFacadeLocal
     //java:global/com.passos_total-flex-webjsf_war_1.0/UnidadeFederativa]
 
-    @EJB(beanName = "UnidadeFederativa")
+    @EJB(beanName = "UnidadeFederativaFacade")
     private IFacadeLocal unFederativa;
 
     /**

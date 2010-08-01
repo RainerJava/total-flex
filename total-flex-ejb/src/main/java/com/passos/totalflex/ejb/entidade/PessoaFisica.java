@@ -21,9 +21,10 @@ public class PessoaFisica extends Pessoa implements Serializable, IEntidadeBase 
     @Size(max = 50)
     @NotNull
     private String nome;
+
     @Size(max = 8, min = 8)
     private String rg;
-    @Size(max = 11, min = 11)
+
     private String cpf;
 
     public String getCpf() {
@@ -50,9 +51,7 @@ public class PessoaFisica extends Pessoa implements Serializable, IEntidadeBase 
         this.rg = rg;
     }
 
-    public String toString(){
+    public String toString() {
         return getNome();
     }
-
-
 }

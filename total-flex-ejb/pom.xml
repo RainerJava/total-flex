@@ -22,7 +22,7 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
-                   
+
                 </configuration>
             </plugin>
 
@@ -33,7 +33,7 @@
                     <skip>${totalflex.maven.test.skip}</skip>
                 </configuration>
             </plugin>
-            
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -108,6 +108,24 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>caelum-stella-core</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>boleto-example</artifactId>
+            <version>1.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>caelum-stella-boleto</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
 
@@ -151,6 +169,8 @@
         <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
     </properties>
 </project>
+
+
 
 
 

@@ -15,7 +15,7 @@
 
     <properties>
         <totalflex.versao>1.0</totalflex.versao>
-        <totalflex.maven.test.skip>false</totalflex.maven.test.skip>
+        <totalflex.maven.test.skip>true</totalflex.maven.test.skip>
     </properties>
 
     <repositories>

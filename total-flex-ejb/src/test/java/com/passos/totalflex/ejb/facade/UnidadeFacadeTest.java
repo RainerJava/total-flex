@@ -37,6 +37,7 @@ public class UnidadeFacadeTest {
         Map properties = new HashMap();
         properties.put(EJBContainer.MODULES, new File("target/classes"));
 //        properties.put("org.glassfish.ejb.embedded.glassfish.installation.root", "/Applications/NetBeans/sges-v3/glassfish");
+//properties.put("javax.persistence.logging.level","FINE");
 
         container = EJBContainer.createEJBContainer(properties);
         context = container.getContext();

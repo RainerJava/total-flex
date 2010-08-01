@@ -33,35 +33,15 @@
                 </configuration>
             </plugin>
 
-
-            <!--
-* embedded-glasfish:run – starts the embedded server if it is not already running and deploys the specfied application. The goal keeps the server running, so the user can make changes in the application, reploy and test iteratively.
-* embedded-glassfish:start – starts the embedded server with the specified parameters
-* embedded-glassfish:deploy – deploys the specified application
-* embedded-glassfish:undeploy – undeploys the application identified by the “name” parameter. If no name is specifed all applications are undeployed.
-* embedded-glassfish:stop – stops the embedded server
-* embedded-glassfish:admin – executes the specified admin command on the embedded server. For example, you could create a jdbc resource.
-            -->
             <plugin>
-                <groupId>org.glassfish</groupId>
-                <artifactId>maven-embedded-glassfish-plugin</artifactId>
-                <version>3.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <goalPrefix>glassfish</goalPrefix>
-                    <app>webjsf.war</app>
-                    <port>8080</port>
-                    <contextRoot>test</contextRoot>
+                    <skip>${totalflex.maven.test.skip}</skip>
                 </configuration>
-                <executions>
-                    <!--execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution-->
-                </executions>
             </plugin>
 
+            
         </plugins>
         <finalName>webjsf</finalName>
     </build>

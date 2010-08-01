@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  *
  * @author clayton
  */
-public class NewEmptyJUnitTest {
+public class UnidadeFacadeTest {
 
     private EJBContainer container;
 
@@ -29,7 +29,7 @@ public class NewEmptyJUnitTest {
 
     private IFacadeLocal<UnidadeFederativa> facade;
 
-    public NewEmptyJUnitTest() {
+    public UnidadeFacadeTest() {
     }
 
     @Before

@@ -14,9 +14,13 @@ public interface IFacade<T> {
 
     void create(T E);
 
+    void create(List<T> entityList);
+
     void edit(T E);
 
     void remove(T E);
+
+    void remove(List<T> entityList);
 
     T find(Object id);
 

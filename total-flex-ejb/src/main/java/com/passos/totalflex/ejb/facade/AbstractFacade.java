@@ -1,5 +1,6 @@
 package com.passos.totalflex.ejb.facade;
 
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,6 +12,7 @@ import javax.persistence.PersistenceContext;
 public abstract class AbstractFacade<T> implements IFacade<T> {
 
     private Class<T> entityClass;
+
     @PersistenceContext(unitName = "db-tf")
     private EntityManager em;
 
@@ -33,6 +35,14 @@ public abstract class AbstractFacade<T> implements IFacade<T> {
     }
 
     @Override
+    public void create(List<T> entitytList) {
+        for (Iterator<T> it = entitytList.iterator(); it.hasNext();) {
+            T entity = it.next();
+            this.create(entity);
+        }
+    }
+
+    @Override
     public void edit(T entity) {
         getEntityManager().merge(entity);
     }
@@ -40,6 +50,13 @@ public abstract class AbstractFacade<T> implements IFacade<T> {
     @Override
     public void remove(T entity) {
         getEntityManager().remove(getEntityManager().merge(entity));
+    }
+
+    public void remove(List<T> entityList) {
+        for (Iterator<T> it = entityList.iterator(); it.hasNext();) {
+            T entity = it.next();
+            this.remove(entity);
+        }
     }
 
     @Override

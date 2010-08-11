@@ -17,12 +17,7 @@ import javax.rmi.PortableRemoteObject;
  * @author Adam Bien, www.adam-bien.com
  */
 public class BeanLocator {
-//            try {
-//                umRemote = (IFacadeLocal) InitialContext.doLookup("java:module/UnidadeMedidaFacadeLocal");
-//            } catch (NamingException ex) {
-//                Logger.getLogger(TestCrud.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-            //umRemote = (IFacadeLocal) BeanLocator.lookup("");
+
     public static class GlobalJNDIName {
 
         private StringBuilder builder;

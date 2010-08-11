@@ -24,11 +24,10 @@ public class UnidadeFederativa implements Serializable, IEntidadeBase {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Size(max = 50)
-    @NotNull(message="validacao.NaoPodeSerVazia")
+    @NotNull(message = "validacao.NaoPodeSerVazia")
     private String nome;
-
-    @NotNull(message= "Abreviação não pode ser vazia")
-    @Size(max = 2, min = 2, message="Abreviação deve ter duas letras obrigatóriamente")
+    @NotNull(message = "Abreviação não pode ser vazia")
+    @Size(max = 2, min = 2, message = "Abreviação deve ter duas letras obrigatóriamente")
     private String abreviacao;
 
     public UnidadeFederativa() {
@@ -63,7 +62,7 @@ public class UnidadeFederativa implements Serializable, IEntidadeBase {
         this.id = id;
     }
 
-    public String toString(){
+    public String toString() {
         return this.abreviacao;
     }
 }

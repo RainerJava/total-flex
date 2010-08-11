@@ -21,15 +21,13 @@ import static org.junit.Assert.*;
  *
  * @author clayton
  */
-public class UnidadeFacadeTest {
+public class UnidadeFederativaFacadeTest {
 
     private EJBContainer container;
-
     private Context context;
-
     private IFacadeLocal<UnidadeFederativa> facade;
 
-    public UnidadeFacadeTest() {
+    public UnidadeFederativaFacadeTest() {
     }
 
     @Before
@@ -51,7 +49,7 @@ public class UnidadeFacadeTest {
     }
 
     @Test
-    public void testCreateUnidadeFederatifa() throws NamingException {
+    public void testCreateUnidadeFederativa() throws NamingException {
         UnidadeFederativa uf = new UnidadeFederativa("Paraná", "PR");
         facade.create(uf);
 
@@ -62,16 +60,16 @@ public class UnidadeFacadeTest {
         assertEquals(all.get(0).getNome(), uf.getNome());
     }
 
-    @Test(expected = javax.ejb.EJBException.class)
+    @Test(expected = javax.validation.ConstraintViolationException.class)
     public void testTestaConsistenciaSigla() {
         UnidadeFederativa uf = new UnidadeFederativa("Paraná", "");
         facade.create(uf);
 
     }
 
-    @Test(expected = javax.ejb.EJBException.class)
+    @Test(expected = javax.validation.ConstraintViolationException.class)
     public void testTestaConsistenciaNome() {
-        UnidadeFederativa uf = new UnidadeFederativa("", "PR");
+        UnidadeFederativa uf = new UnidadeFederativa(null, "PR");
         facade.create(uf);
 
     }

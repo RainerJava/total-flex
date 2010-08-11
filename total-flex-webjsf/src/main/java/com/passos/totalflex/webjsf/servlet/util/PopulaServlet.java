@@ -4,17 +4,16 @@
  */
 package com.passos.totalflex.webjsf.servlet.util;
 
-import com.passos.totalflex.ejb.CachingServiceLocator;
+import com.passos.totalflex.ejb.entidade.UnidadeFederativa;
 import com.passos.totalflex.ejb.entidade.UnidadeMedida;
 import com.passos.totalflex.ejb.facadelocal.IFacadeLocal;
-import com.passos.totalflex.ejb.facadelocal.UnidadeMedidaFacadeLocal;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
 import javax.naming.Context;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,28 +26,37 @@ import javax.servlet.http.HttpServletResponse;
 public class PopulaServlet extends HttpServlet {
 
     private Context ctx;
+    @EJB(beanName = "UnidadeMedidaFacadeLocal")
+    private IFacadeLocal unidadeMedidaFacade;
+    @EJB(beanName = "UnidadeFederativaFacade")
+    private com.passos.totalflex.ejb.facade.IFacadeLocal unidadeFederativaFacade;
 
     public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         this.populaUnidadeMedida();
+        this.pupulaUnidadeFederativa();
     }
 
-    public void populaUnidadeMedida() throws ServletException {
-        IFacadeLocal facade;
-        try {
-            CachingServiceLocator locator = CachingServiceLocator.getInstance();
-            facade = (UnidadeMedidaFacadeLocal) locator.getLocalHome("java:global/classes/UnidadeMedidaFacadeLocal");
+    private void pupulaUnidadeFederativa() throws ServletException {
+        List<UnidadeFederativa> unidadeFederativaList = new ArrayList<UnidadeFederativa>();
+        unidadeFederativaList.add(new UnidadeFederativa("Paraná", "PR"));
+        unidadeFederativaList.add(new UnidadeFederativa("São Paulo", "SP"));
+        unidadeFederativaList.add(new UnidadeFederativa("Santa Cantarina", "SC"));
+        unidadeFederativaList.add(new UnidadeFederativa("Rio Grande do Sul", "RS"));
 
+        unidadeFederativaFacade.create(unidadeFederativaList);
+    }
+
+    private void populaUnidadeMedida() throws ServletException {
+        try {
             UnidadeMedida um = new UnidadeMedida("Litros", "Lt");
-            facade.salvar(um);
+            unidadeMedidaFacade.salvar(um);
 
             List<UnidadeMedida> unidadeMedidaList = new ArrayList<UnidadeMedida>();
             unidadeMedidaList.add(new UnidadeMedida("Litros", "Lt"));
             unidadeMedidaList.add(new UnidadeMedida("Gramas", "Gr"));
             unidadeMedidaList.add(new UnidadeMedida("Kilos", "Kl"));
 
-
-
-        } catch (NamingException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(PopulaServlet.class.getName()).log(Level.SEVERE, null, ex);
             throw new ServletException(ex);
         }

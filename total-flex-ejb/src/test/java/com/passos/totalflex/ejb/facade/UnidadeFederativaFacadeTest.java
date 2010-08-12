@@ -60,14 +60,14 @@ public class UnidadeFederativaFacadeTest {
         assertEquals(all.get(0).getNome(), uf.getNome());
     }
 
-    @Test(expected = javax.validation.ConstraintViolationException.class)
+    @Test(expected = javax.ejb.EJBException.class)
     public void testTestaConsistenciaSigla() {
         UnidadeFederativa uf = new UnidadeFederativa("Paraná", "");
         facade.create(uf);
 
     }
 
-    @Test(expected = javax.validation.ConstraintViolationException.class)
+    @Test(expected = javax.ejb.EJBException.class)
     public void testTestaConsistenciaNome() {
         UnidadeFederativa uf = new UnidadeFederativa(null, "PR");
         facade.create(uf);

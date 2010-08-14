@@ -4,7 +4,7 @@
  */
 package com.passos.totalflex.ejb.facade;
 
-import com.passos.totalflex.ejb.entidade.Cidade;
+import com.passos.totalflex.ejb.entidade.IEntidadeBase;
 import javax.ejb.Stateless;
 
 /**
@@ -12,9 +12,9 @@ import javax.ejb.Stateless;
  * @author clayton.kendy
  */
 @Stateless(name = "EntidadeBase")
-public class CidadeFacade extends AbstractFacade<Cidade> implements IFacadeLocal<Cidade> {
+public class EntidadeBaseFacade extends AbstractFacade<IEntidadeBase> implements IFacadeLocal<IEntidadeBase> {
 
-    public CidadeFacade() {
-        super(Cidade.class);
+    public EntidadeBaseFacade() {
+        super(IEntidadeBase.class);
     }
 }

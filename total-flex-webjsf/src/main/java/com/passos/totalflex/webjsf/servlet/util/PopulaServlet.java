@@ -26,8 +26,10 @@ import javax.servlet.http.HttpServletResponse;
 public class PopulaServlet extends HttpServlet {
 
     private Context ctx;
+
     @EJB(beanName = "UnidadeMedidaFacadeLocal")
     private IFacadeLocal unidadeMedidaFacade;
+
     @EJB(beanName = "UnidadeFederativaFacade")
     private com.passos.totalflex.ejb.facade.IFacadeLocal unidadeFederativaFacade;
 

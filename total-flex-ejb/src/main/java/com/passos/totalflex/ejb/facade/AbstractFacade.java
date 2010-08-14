@@ -17,12 +17,11 @@ public abstract class AbstractFacade<T> implements IFacade<T> {
     private EntityManager em;
 
     public AbstractFacade(Class<T> entityClass) {
-        this.entityClass = entityClass;
+        this.setEntityClass(entityClass);
     }
 
-    public AbstractFacade setClass(Class<T> entityClass) {
+    public void setEntityClass(Class<T> entityClass) {
         this.entityClass = entityClass;
-        return this;
     }
 
     protected EntityManager getEntityManager() {
@@ -52,6 +51,7 @@ public abstract class AbstractFacade<T> implements IFacade<T> {
         getEntityManager().remove(getEntityManager().merge(entity));
     }
 
+    @Override
     public void remove(List<T> entityList) {
         for (Iterator<T> it = entityList.iterator(); it.hasNext();) {
             T entity = it.next();

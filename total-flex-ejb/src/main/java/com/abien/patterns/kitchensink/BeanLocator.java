@@ -21,15 +21,25 @@ public class BeanLocator {
     public static class GlobalJNDIName {
 
         private StringBuilder builder;
+
         private final static String PREFIX = "java:global";
+
         private final static String SEPARATOR = "/";
+
         private final static String PROPERTY_FILE = "/global.jndi";
+
         private final static String MODULE_NAME_KEY = "module.name";
+
         private final static String APP_NAME_KEY = "application.name";
+
         private Properties globalConfiguration;
+
         private String appName;
+
         private String moduleName;
+
         private String beanName;
+
         private String businessInterfaceName;
 
         public GlobalJNDIName() {

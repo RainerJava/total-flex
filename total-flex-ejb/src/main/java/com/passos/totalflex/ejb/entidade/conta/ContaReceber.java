@@ -4,15 +4,21 @@
  */
 package com.passos.totalflex.ejb.entidade.conta;
 
-import com.passos.totalflex.ejb.entidade.contrato.AContrato;
+import com.passos.totalflex.ejb.entidade.Pessoa;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author clayton
  */
-public class ContaReceber extends AConta {
+@Entity
+public class ContaReceber extends Conta {
 
-    private AContrato contrato;
+    @NotNull
+    @ManyToOne
+    private Pessoa devedor;
 
     @Override
     public Boolean isContaPagar() {
@@ -24,5 +30,11 @@ public class ContaReceber extends AConta {
         return true;
     }
 
- 
+    public Pessoa getDevedor() {
+        return devedor;
+    }
+
+    public void setDevedor(Pessoa devedor) {
+        this.devedor = devedor;
+    }
 }

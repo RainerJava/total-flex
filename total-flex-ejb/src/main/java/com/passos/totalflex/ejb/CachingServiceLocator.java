@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.passos.totalflex.ejb;
 
 import java.util.HashMap;
@@ -26,7 +22,9 @@ import javax.mail.Session;
 public class CachingServiceLocator {
 
     private InitialContext ic;
+
     private Map<String, Object> cache;
+
     private static CachingServiceLocator me;
 
     static {

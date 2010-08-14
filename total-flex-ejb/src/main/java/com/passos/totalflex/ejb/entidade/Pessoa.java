@@ -21,18 +21,21 @@ import javax.validation.constraints.NotNull;
 public class Pessoa implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     private Boolean excluido;
+
     /**
      * Endereço de cobrança, endereço de correspondência
      */
     @OneToMany
     @JoinColumn(name = "idPessoa")
     private Set<Endereco> enderecoSet;
+
     @OneToMany
     @JoinColumn(name = "idPessoa")
     private Set<Telefone> telefoneSet;

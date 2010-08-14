@@ -8,7 +8,7 @@ package com.passos.totalflex.ejb.entidade.contrato;
  *
  * @author clayton
  */
-public class ContratoVenda extends AContrato {
+public class ContratoVenda extends Contrato {
 
     @Override
     public Boolean isContratoVenda() {

@@ -10,14 +10,17 @@ import javax.validation.constraints.Size;
  * @author Clayton K. N. Passos
  */
 @Entity
-public class Telefone extends Contato implements Serializable {
+public class Telefone extends Contato {
 
     private static final long serialVersionUID = 1L;
+
     @Size(max = 3, min = 3)
     @NotNull
     private String ddd;
+
     @Size(max = 8, min = 8)
     private String numero;
+
     @NotNull
     private Boolean movel;
 

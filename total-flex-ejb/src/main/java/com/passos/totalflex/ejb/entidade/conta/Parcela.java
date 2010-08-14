@@ -1,35 +1,62 @@
 package com.passos.totalflex.ejb.entidade.conta;
 
+import com.passos.totalflex.ejb.entidade.IEntidadeBase;
+import com.passos.totalflex.ejb.entidade.exception.EntidadeException;
 import java.math.BigDecimal;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author clayton
  */
-public class Parcela {
+@Entity
+public class Parcela implements IEntidadeBase {
 
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private AConta conta;
+    @ManyToOne
+    @NotNull
+    private Conta conta;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataVencimento;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataPagamento;
 
     private BigDecimal valorParcela;
 
     private BigDecimal valorPago;
 
-    public Boolean isVencido(){
+    public Boolean isVencido() {
         return this.dataVencimento.getTime() <= System.currentTimeMillis();
     }
 
-    public AConta getConta() {
+    public Long diasEmAtrazo(){
+        throw new EntidadeException("entidade.metod.nao.implementado");
+    }
+
+    public BigDecimal valorDiferido() {
+        return this.valorPago.subtract(this.valorParcela);
+    }
+
+    public Conta getConta() {
         return conta;
     }
 
-    public void setConta(AConta conta) {
+    public void setConta(Conta conta) {
         this.conta = conta;
     }
 
@@ -64,7 +91,6 @@ public class Parcela {
     public void setValorPago(BigDecimal valorPago) {
         this.valorPago = valorPago;
     }
-
 
     public BigDecimal getValorParcela() {
         return valorParcela;

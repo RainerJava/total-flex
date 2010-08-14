@@ -24,7 +24,9 @@ import static org.junit.Assert.*;
 public class UnidadeFederativaFacadeTest {
 
     private EJBContainer container;
+
     private Context context;
+
     private IFacadeLocal<UnidadeFederativa> facade;
 
     public UnidadeFederativaFacadeTest() {
@@ -34,8 +36,8 @@ public class UnidadeFederativaFacadeTest {
     public void setUp() throws NamingException {
         Map properties = new HashMap();
         properties.put(EJBContainer.MODULES, new File("target/classes"));
-//        properties.put("org.glassfish.ejb.embedded.glassfish.installation.root", "/Applications/NetBeans/sges-v3/glassfish");
-//properties.put("javax.persistence.logging.level","FINE");
+//      properties.put("org.glassfish.ejb.embedded.glassfish.installation.root", "/Applications/NetBeans/sges-v3/glassfish");
+//      properties.put("javax.persistence.logging.level","FINE");
 
         container = EJBContainer.createEJBContainer(properties);
         context = container.getContext();

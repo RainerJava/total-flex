@@ -4,9 +4,7 @@
  */
 package com.passos.totalflex.ejb.entidade;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,17 +17,21 @@ import javax.validation.constraints.Size;
  * @author Administrador
  */
 @Entity
-public class Cidade implements Serializable, IEntidadeBase {
+public class Cidade implements  IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @NotNull
     @Size(max = 50)
     private String nome;
+
     @Size(max = 2)
     private String abreviacao;
+
     @ManyToOne
     @NotNull
     private UnidadeFederativa uf;

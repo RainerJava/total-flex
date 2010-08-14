@@ -21,13 +21,16 @@ import javax.validation.constraints.NotNull;
 public class TabelaPreco implements Serializable, IEntidadeBase {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @NotNull
     private String nome;
+
     private String descricao;
+
     @ManyToMany(mappedBy = "tabelaPrecoSet")
     private Set<Produto> produtoSet;
 

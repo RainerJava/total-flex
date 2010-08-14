@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.passos.totalflex.ejb.entidade;
 
 import java.io.Serializable;
@@ -17,15 +13,18 @@ import javax.validation.constraints.Size;
  * @author Administrador
  */
 @Entity
-public class UnidadeFederativa implements Serializable, IEntidadeBase {
+public class UnidadeFederativa implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Size(max = 50)
     @NotNull(message = "validacao.NaoPodeSerVazia")
     private String nome;
+
     @NotNull(message = "Abreviação não pode ser vazia")
     @Size(max = 2, min = 2, message = "Abreviação deve ter duas letras obrigatóriamente")
     private String abreviacao;

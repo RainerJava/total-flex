@@ -4,8 +4,6 @@
  */
 package com.passos.totalflex.ejb.entidade;
 
-import com.passos.totalflex.ejb.entidade.IEntidadeBase;
-import com.passos.totalflex.ejb.entidade.TabelaPreco;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Entity;
@@ -32,13 +30,16 @@ public class Produto implements Serializable, IEntidadeBase {
     private Long id;
 
     @NotNull
-    @Size(max = 255, min = 2)
+    @Size(max = 255, min = 1)
     private String nome;
+
+    @Size(max = 255)
+    private String descricao;
 
     /**
      * Reservado para armazenar o código do fornecedor do produto
      */
-    @Size(max = 50)
+    @Size(max = 100)
     private String codigoFornecedor;
 
     @ManyToMany
@@ -47,8 +48,12 @@ public class Produto implements Serializable, IEntidadeBase {
         @JoinColumn(name = "idTabelaPreco")})
     private Set<TabelaPreco> tabelaPrecoSet;
 
-    public void setCodigoFornecedor(String codigoFornecedor) {
-        this.codigoFornecedor = codigoFornecedor;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -59,12 +64,8 @@ public class Produto implements Serializable, IEntidadeBase {
         this.nome = nome;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setCodigoFornecedor(String codigoFornecedor) {
+        this.codigoFornecedor = codigoFornecedor;
     }
 
     public String getCodigoFornecedor() {
@@ -77,5 +78,14 @@ public class Produto implements Serializable, IEntidadeBase {
 
     public void setTabelaPrecoSet(Set<TabelaPreco> tabelaPrecoSet) {
         this.tabelaPrecoSet = tabelaPrecoSet;
+
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

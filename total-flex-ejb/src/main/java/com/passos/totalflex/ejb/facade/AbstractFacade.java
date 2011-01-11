@@ -16,11 +16,11 @@ public abstract class AbstractFacade<T> implements IFacade<T> {
     @PersistenceContext(unitName = "db-tf")
     private EntityManager em;
 
-    public AbstractFacade(Class<T> entityClass) {
+    public  AbstractFacade(Class<T> entityClass) {
         this.setEntityClass(entityClass);
     }
 
-    public void setEntityClass(Class<T> entityClass) {
+    private void setEntityClass(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
 

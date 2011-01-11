@@ -12,23 +12,23 @@ import java.util.List;
  */
 public interface IFacade<T> {
 
-    void create(T E);
+    public void create(T E);
 
-    void create(List<T> entityList);
+    public void create(List<T> entityList);
 
-    void edit(T E);
+    public void edit(T E);
 
-    void remove(T E);
+    public void remove(T E);
 
-    void remove(List<T> entityList);
+    public void remove(List<T> entityList);
 
-    T find(Object id);
+    public T find(Object id);
 
-    List<T> findAll();
+    public List<T> findAll();
 
-    List<T> findRange(int[] range);
+    public List<T> findRange(int[] range);
 
-    List<T> findRange(int first, int last);
+    public List<T> findRange(int first, int last);
 
-    int count();
+    public int count();
 }

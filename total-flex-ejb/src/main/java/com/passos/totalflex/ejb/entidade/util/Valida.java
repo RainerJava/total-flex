@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 public  class Valida {
 
-    public static final Object isNullThrowException(Object entidade) {
+    public static final Object isNull(Object entidade) {
         if (entidade == null) {
             throw new EntidadeException();
         }
@@ -21,13 +21,13 @@ public  class Valida {
         return entidade;
     }
 
-    public static final Collection isVazioThrowException(Collection entidade) {
-        isNullThrowException(entidade);
+    public static final Collection isVazio(Collection entidades) {
+        isNull(entidades);
 
-        if (entidade.size() == 0) {
+        if (entidades.size() == 0) {
             throw new EntidadeException();
         }
-        return entidade;
+        return entidades;
 
     }
 }
